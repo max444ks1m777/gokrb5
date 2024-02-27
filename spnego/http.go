@@ -6,6 +6,7 @@ import (
 	"encoding/base64"
 	"errors"
 	"fmt"
+	"github.com/jcmturner/goidentity/v6"
 	"io"
 	"io/ioutil"
 	"net"
@@ -201,9 +202,9 @@ const (
 	// spnegoNegTokenRespIncompleteKRB5 - Response token specifying incomplete context and KRB5 as the supported mechtype.
 	spnegoNegTokenRespIncompleteKRB5 = "Negotiate oRQwEqADCgEBoQsGCSqGSIb3EgECAg=="
 	// CTXKeyAuthenticated is the request context key holding a boolean indicating if the request has been authenticated.
-	CTXKeyAuthenticated ctxKey = "github.com/jcmturner/gokrb5/CTXKeyAuthenticated"
+	CTXKeyAuthenticated ctxKey = "github.com/max444ks1m777/gokrb5/CTXKeyAuthenticated"
 	// CTXKeyCredentials is the request context key holding the credentials gopkg.in/jcmturner/goidentity.v2/Identity object.
-	CTXKeyCredentials ctxKey = "github.com/jcmturner/gokrb5/CTXKeyCredentials"
+	CTXKeyCredentials ctxKey = "github.com/max444ks1m777/gokrb5/CTXKeyCredentials"
 	// HTTPHeaderAuthRequest is the header that will hold authn/z information.
 	HTTPHeaderAuthRequest = "Authorization"
 	// HTTPHeaderAuthResponse is the header that will hold SPNEGO data from the server.

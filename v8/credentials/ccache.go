@@ -10,7 +10,7 @@ import (
 	"unsafe"
 
 	"github.com/jcmturner/gofork/encoding/asn1"
-	"github.com/jcmturner/gokrb5/v8/types"
+	"github.com/max444ks1m777/gokrb5/v8/types"
 )
 
 const (

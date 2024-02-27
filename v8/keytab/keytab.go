@@ -13,8 +13,8 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/jcmturner/gokrb5/v8/crypto"
-	"github.com/jcmturner/gokrb5/v8/types"
+	"github.com/max444ks1m777/gokrb5/v8/crypto"
+	"github.com/max444ks1m777/gokrb5/v8/types"
 )
 
 const (
@@ -75,8 +75,8 @@ func (kt *Keytab) GetEncryptionKey(princName types.PrincipalName, realm string, 
 	var kv int
 	for _, k := range kt.Entries {
 		if k.Principal.Realm == realm && len(k.Principal.Components) == len(princName.NameString) &&
-			k.Key.KeyType == etype &&
-			(k.KVNO == uint32(kvno) || kvno == 0) &&
+			/*k.Key.KeyType == etype &&
+			(k.KVNO == uint32(kvno) || kvno == 0) &&*/
 			k.Timestamp.After(t) {
 			p := true
 			for i, n := range k.Principal.Components {
@@ -93,7 +93,7 @@ func (kt *Keytab) GetEncryptionKey(princName types.PrincipalName, realm string, 
 		}
 	}
 	if len(key.KeyValue) < 1 {
-		return key, 0, fmt.Errorf("matching key not found in keytab. Looking for %q realm: %v kvno: %v etype: %v", princName.PrincipalNameString(), realm, kvno, etype)
+		return key, 0, fmt.Errorf("!!!matching key not found in keytab. Looking for %q realm: %v kvno: %v etype: %v", princName.PrincipalNameString(), realm, kvno, etype)
 	}
 	return key, kv, nil
 }

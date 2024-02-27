@@ -3,8 +3,8 @@ package client
 import (
 	"fmt"
 
-	"github.com/jcmturner/gokrb5/v8/kadmin"
-	"github.com/jcmturner/gokrb5/v8/messages"
+	"github.com/max444ks1m777/gokrb5/v8/kadmin"
+	"github.com/max444ks1m777/gokrb5/v8/messages"
 )
 
 // Kpasswd server response codes.
