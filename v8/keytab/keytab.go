@@ -74,22 +74,22 @@ func (kt *Keytab) GetEncryptionKey(princName types.PrincipalName, realm string, 
 	var t time.Time
 	var kv int
 	for _, k := range kt.Entries {
-		if k.Principal.Realm == realm && len(k.Principal.Components) == len(princName.NameString) &&
-			/*k.Key.KeyType == etype &&
-			(k.KVNO == uint32(kvno) || kvno == 0) &&*/
-			k.Timestamp.After(t) {
-			p := true
+		if /*k.Principal.Realm == realm && len(k.Principal.Components) == len(princName.NameString) &&*/
+		/*k.Key.KeyType == etype &&
+		(k.KVNO == uint32(kvno) || kvno == 0) &&*/
+		k.Timestamp.After(t) {
+			/*p := true
 			for i, n := range k.Principal.Components {
 				if princName.NameString[i] != n {
 					p = false
 					break
 				}
-			}
-			if p {
-				key = k.Key
-				kv = int(k.KVNO)
-				t = k.Timestamp
-			}
+			}*/
+			//if p {
+			key = k.Key
+			kv = int(k.KVNO)
+			t = k.Timestamp
+			//}
 		}
 	}
 	if len(key.KeyValue) < 1 {
